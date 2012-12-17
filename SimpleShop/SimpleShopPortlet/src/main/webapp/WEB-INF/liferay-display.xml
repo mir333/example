@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<display>
+    <category name="SimpleShop">
+        <portlet id="Catalog"/>
+    </category>
+</display>
