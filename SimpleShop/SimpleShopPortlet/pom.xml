@@ -13,7 +13,7 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <portlet-hotdeploy>/opt/LifeRay/liferay-portal-6.1.0-ce-ga1/deploy</portlet-hotdeploy>
+        <portlet-hotdeploy>/opt/LifeRay/liferay-portal-6.1.1-ce-ga2-fix/deploy</portlet-hotdeploy>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
