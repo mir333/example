@@ -1,0 +1,33 @@
+form.iba-form form, div.form label, div.form legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+form.iba-form fieldset {
+  margin: 0 0 1.5em 0;
+  padding: 1.4em;
+}
+
+form.iba-form legend {
+  padding: 0 .4em;
+  font-size: 1.2em;
+}
+
+form.iba-form label {
+  float: left;
+  width: 9em;
+  display: block;
+  clear: left;
+  margin-right: 1em;
+  text-align: left;
+}
+
+form.iba-form textarea, div.form input, div.form select, div.form label, div.form button, div.form optgroup {
+  margin-top: 5px;
+}
+
+form.iba-form input[type="checkbox"], div.form input[type="radio"] {
+  margin-bottom: 7px;
+}

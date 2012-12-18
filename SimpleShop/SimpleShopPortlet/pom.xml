@@ -1,27 +1,29 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>eu.ibacz.pv230</groupId>
         <artifactId>SimpleShop</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.1-SNAPSHOT</version>
     </parent>
     <groupId>eu.ibacz.pv230</groupId>
     <artifactId>SimpleShopPortlet</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
 
     <properties>
         <portlet-hotdeploy>/opt/LifeRay/liferay-portal-6.1.1-ce-ga2-fix/deploy</portlet-hotdeploy>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <liferay.version>6.1.1</liferay.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>eu.ibacz.pv230</groupId>
             <artifactId>SimpleShopBackend</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -49,6 +51,24 @@
             <artifactId>spring-web</artifactId>
             <version>3.0.3.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc-portlet</artifactId>
+            <version>3.0.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>util-taglib</artifactId>
+            <version>${liferay.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -66,8 +86,7 @@
                                 </goals>
                                 <configuration>
                                     <tasks>
-                                        <copy file="${project.build.directory}/${project.build.finalName}.war"
-                                              todir="${portlet-hotdeploy}"></copy>
+                                        <copy file="${project.build.directory}/${project.build.finalName}.war" todir="${portlet-hotdeploy}"></copy>
                                     </tasks>
                                 </configuration>
                             </execution>

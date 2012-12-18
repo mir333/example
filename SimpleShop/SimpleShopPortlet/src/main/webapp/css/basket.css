@@ -1,0 +1,7 @@
+table {
+    width: 100%;
+}
+
+.basket-portlet .order .portlet-msg-error {
+    display: inline;
+}

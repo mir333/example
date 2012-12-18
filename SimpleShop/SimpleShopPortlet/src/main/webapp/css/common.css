@@ -1,0 +1,14 @@
+
+span.label {
+    width: 150px;
+    font-weight: bold;
+    float: left;
+}
+
+.divider {
+    clear: both;
+}
+
+.buttons {
+    margin-top: 15px;
+}

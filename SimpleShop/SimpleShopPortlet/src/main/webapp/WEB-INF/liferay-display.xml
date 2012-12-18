@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <display>
     <category name="SimpleShop">
-        <portlet id="Catalog"/>
+        <portlet id="Basket" />
+        <portlet id="Catalog" />
+        <portlet id="Detail" />        
     </category>
 </display>
