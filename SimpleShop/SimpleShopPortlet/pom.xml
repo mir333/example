@@ -14,9 +14,9 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <portlet-hotdeploy>/opt/LifeRay/liferay-portal-6.1.1-ce-ga2-fix/deploy</portlet-hotdeploy>
+        <portlet-hotdeploy>/opt/LifeRay/liferay-portal-6.1.0-ce-ga1/deploy</portlet-hotdeploy>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <liferay.version>6.1.1</liferay.version>
+        <liferay.version>6.1.0</liferay.version>
     </properties>
 
     <dependencies>
@@ -110,12 +110,4 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
-        <repository>
-            <url>http://repository.jboss.org/maven2/</url>
-            <id>jboss-repository</id>
-            <layout>default</layout>
-            <name>JBoss Repository</name>
-        </repository>
-    </repositories>
 </project>

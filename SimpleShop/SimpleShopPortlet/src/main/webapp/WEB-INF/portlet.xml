@@ -24,7 +24,7 @@
             <name>buyProductEvent</name>
         </supported-processing-event>
     </portlet>
-              
+
     <portlet>
         <portlet-name>Catalog</portlet-name>
         <portlet-class>eu.ibacz.example.simpleshop.portlet.catalog.CatalogPortlet</portlet-class>
