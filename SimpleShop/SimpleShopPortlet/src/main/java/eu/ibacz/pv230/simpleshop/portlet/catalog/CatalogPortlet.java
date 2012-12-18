@@ -11,12 +11,11 @@
 package eu.ibacz.pv230.simpleshop.portlet.catalog;
 
 import eu.ibacz.pv230.simpleshop.backend.ServiceProvider;
-import eu.ibacz.pv230.simpleshop.portlet.SimpleShopConstants;
 
 import javax.portlet.*;
 import java.io.IOException;
 
-import static eu.ibacz.pv230.simpleshop.portlet.catalog.CatalogConstants.JSP_VIEW;
+import static eu.ibacz.pv230.simpleshop.portlet.catalog.CatalogConstants.*;
 
 /**
  * @author Miroslav Ligas
@@ -25,9 +24,14 @@ public class CatalogPortlet extends GenericPortlet {
 
     @Override
     protected void doView(RenderRequest request, RenderResponse response) throws PortletException, IOException {
-
-        request.setAttribute(SimpleShopConstants.ATTRIBUTE_PRODUCTS,
-                ServiceProvider.getCatalog().getAllProducts());
+        String query = request.getParameter(PARAM_QUERY);
+               if (query == null) {
+                   request.setAttribute(ATTRIBUTE_PRODUCTS,
+                           ServiceProvider.getCatalog().getAllProducts());
+               } else {
+                   request.setAttribute(ATTRIBUTE_PRODUCTS,
+                           ServiceProvider.getCatalog().findProducts(query));
+               }
 
         PortletRequestDispatcher dispatcher =
                 getPortletContext().getRequestDispatcher(JSP_VIEW);
@@ -35,4 +39,8 @@ public class CatalogPortlet extends GenericPortlet {
     }
 
 
+    @ProcessAction(name = ACTION_SEARCH)
+    public void actionSearch(ActionRequest request, ActionResponse response) throws PortletException, IOException {
+        response.setRenderParameters(request.getParameterMap());
+    }
 }

@@ -7,25 +7,18 @@
 <div id="${ns}catalogView">
 
     <h1><f:message key="ss-msg-products"/></h1>
+    <div>
+        <portlet:actionURL var="searchURL" name="<%=ACTION_SEARCH %>"/>
+        <form action="${searchURL}" method="post">
+            <input type="text" name="<%= PARAM_QUERY %>" id="${ns}query" autocomplete="off">
+            <input type="submit" value="<f:message key="ss-msg-search"/>">
+        </form>
+    </div>
 
+
+    <c:forEach var="product" items="${products}">
+        <c:out value="${product.name}"/> <br>
+    </c:forEach>
 </div>
 
-<%--
 
-TAKTO NIE!!!
-
-<%
-    List<ProductDTO> dto = (List<ProductDTO>) renderRequest.getAttribute(ATTRIBUTE_PRODUCTS);
-    for (ProductDTO productDTO : dto) {
-%>
-<%=productDTO.getName()%>
-<br/>
-<%
-    }
-%>
---%>
-
-
-<c:forEach var="product" items="${products}">
-    <c:out value="${product.name}"/> <br>
-</c:forEach>
